@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "212943048675",
+    "firebase_url": "https://faqscovid-19.firebaseio.com",
+    "project_id": "faqscovid-19",
+    "storage_bucket": "faqscovid-19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212943048675:android:15e616848cf0ef4c3d1ad6",
+        "android_client_info": {
+          "package_name": "com.example.faqscovid_19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212943048675-eo8rcgabrptpgn81bnos9lkuqsfgoab0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.faqscovid_19",
+            "certificate_hash": "180aceb059cbc7afed8c75a0e10abd5b4bce5c9f"
+          }
+        },
+        {
+          "client_id": "212943048675-fvfolc4nr0qlvqmghjl1o0dc46l491mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1LEmseBrU6I04wpoWbxE5vOgQ74CGbWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212943048675-fvfolc4nr0qlvqmghjl1o0dc46l491mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
