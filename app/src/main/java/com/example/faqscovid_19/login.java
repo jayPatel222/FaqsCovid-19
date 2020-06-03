@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -21,6 +22,7 @@ public class login extends AppCompatActivity {
      EditText phoneNumber;
      FirebaseAuth mAuth;
      String codeSent;
+     FirebaseUser mFirebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,6 +30,15 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         phoneNumber = findViewById(R.id.phoneNumber);
+        mFirebaseUser = mAuth.getCurrentUser();
+        if (mFirebaseUser != null) {
+            //   Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(login.this, MainActivity.class);
+                startActivity(i);
+        } else {
+            System.out.println("Please login again");
+        }
+
         findViewById(R.id.b_otp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -22,4 +22,11 @@
             android:icon="@drawable/ic_pan"
             android:title="Prevention" />
     </group>
+    <item android:title="Account">
+        <menu>
+            <item android:id="@+id/logout"
+                android:icon="@drawable/ic_power"
+                android:title="Log out"></item>
+        </menu>
+    </item>
 </menu>
