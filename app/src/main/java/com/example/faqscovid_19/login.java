@@ -30,11 +30,12 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         phoneNumber = findViewById(R.id.phoneNumber);
+        Intent i = new Intent(login.this, MainActivity.class);
+        startActivity(i);
         mFirebaseUser = mAuth.getCurrentUser();
         if (mFirebaseUser != null) {
             //   Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(login.this, MainActivity.class);
-                startActivity(i);
+
         } else {
             System.out.println("Please login again");
         }
