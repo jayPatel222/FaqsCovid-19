@@ -10,6 +10,10 @@
             android:icon="@drawable/ic_email"
             android:title="News" />
         <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_faq"
+            android:title="FAQs" />
+        <item
             android:id="@+id/nav_data"
             android:icon="@drawable/ic_trending"
             android:title="Data" />
@@ -21,6 +25,7 @@
             android:id="@+id/nav_prevention"
             android:icon="@drawable/ic_pan"
             android:title="Prevention" />
+
     </group>
     <item android:title="Account">
         <menu>
