@@ -41,7 +41,10 @@
         android:id="@+id/imageView3"
         android:layout_width="213dp"
         android:layout_height="214dp"
-        app:srcCompat="@drawable/otpicon"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="64dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/otpicon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
