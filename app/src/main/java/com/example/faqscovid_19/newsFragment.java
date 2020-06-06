@@ -45,7 +45,7 @@ public class newsFragment extends Fragment{
 
         viewLocal = inflater.inflate(R.layout.fragment_news, container, false);
 
-        myRecyclerView = (RecyclerView) viewLocal.findViewById(R.id.news_recycler_view);
+        myRecyclerView = viewLocal.findViewById(R.id.news_recycler_view);
         myRecyclerView.setHasFixedSize(true);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
