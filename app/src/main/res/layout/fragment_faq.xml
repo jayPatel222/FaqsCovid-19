@@ -7,36 +7,17 @@
     android:scrollbars="vertical"
     android:orientation="vertical">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_marginTop="3dp"
-    android:layout_marginBottom="3dp"
-    android:orientation="horizontal"
-    android:background="#BBEAC0">
-
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="2"
-        android:textColor="#000F6E"
-        android:textSize="22sp"
-        android:text="FAQ COVID-19"
-        android:gravity="end|center"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:textColor="#000F6E"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
         android:textSize="14sp"
-        android:paddingEnd="5dp"
-        android:text="Source\nWHO &amp; CDC"
-        android:gravity="end"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:gravity="center"
+        android:text="@string/faq_source"
         android:textStyle="bold"/>
-
-</LinearLayout>
 
     <ExpandableListView
         android:id="@+id/faq_expandable_textView"

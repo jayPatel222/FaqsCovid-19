@@ -15,6 +15,7 @@
     <string name="data_total_cases">Total Cases Confirmed:</string>
     <string name="data_total_deaths">Total Deaths</string>
     <string name="data_total_recovered">Total Recovered</string>
+    <string name="faq_source">Source: WHO &amp; CDC</string>
 
     <string-array name="data_country_names">
         <item>Global Stats</item>
