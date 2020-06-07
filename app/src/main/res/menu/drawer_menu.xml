@@ -4,17 +4,12 @@
     tools:showIn="navigation_view"
     >
 
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_email"
             android:title="News"
             />
-        <item
-            android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_faq"
-            android:title="FAQs" />
         <item
             android:id="@+id/nav_data"
             android:icon="@drawable/ic_trending"
@@ -27,13 +22,17 @@
             android:id="@+id/nav_prevention"
             android:icon="@drawable/ic_pan"
             android:title="Prevention" />
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_faq"
+            android:title="FAQs" />
 
     </group>
     <item android:title="Account">
         <menu>
             <item android:id="@+id/logout"
                 android:icon="@drawable/ic_power"
-                android:title="Log out"></item>
+                android:title="Log out"/>
         </menu>
     </item>
 </menu>
