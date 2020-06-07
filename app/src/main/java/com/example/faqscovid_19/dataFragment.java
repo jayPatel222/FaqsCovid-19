@@ -1,29 +1,27 @@
 package com.example.faqscovid_19;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -35,16 +33,30 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class dataFragment extends Fragment {
 
     View viewLocal;
     TextView countryOrRegion, confirmedCases, deathCases, recoveredCases;
-    List<CovidData> countryObjects = new ArrayList<>();
+    Button updateData;
+    List<CovidData> countryObjects;
+    int positionOnSpinner;
     Spinner countrySpinner;
-    ArrayAdapter<CovidData> adapter;
+    //ArrayAdapter<CovidData> adapter;
+    ArrayAdapter<CharSequence> adapter;
     RequestQueue QUEUE;
-    String url = "https://api.smartable.ai/coronavirus/stats/global?Subscription-Key=1a3e9cd5b22c4a9b86885d5ce7a1ce3d";
+    String url;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        url = "https://api.smartable.ai/coronavirus/stats/global?Subscription-Key=1a3e9cd5b22c4a9b86885d5ce7a1ce3d";
+        countryObjects = new ArrayList<>();
+        Log.e("BEFORE!", "BEFORE!");
+        QUEUE = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
+        httpGET(url);
+    }
 
     @Nullable
     @Override
@@ -53,18 +65,25 @@ public class dataFragment extends Fragment {
         viewLocal = inflater.inflate(R.layout.fragment_data, container, false);
 
         countrySpinner = viewLocal.findViewById(R.id.data_spinner);
+        updateData = viewLocal.findViewById(R.id.data_button);
 
         countryOrRegion = viewLocal.findViewById(R.id.data_country_name);
         confirmedCases = viewLocal.findViewById(R.id.data_confirmed);
         deathCases = viewLocal.findViewById(R.id.data_deaths);
         recoveredCases = viewLocal.findViewById(R.id.data_recovered);
 
-        QUEUE = Volley.newRequestQueue(getContext());
-        httpGET(url);
+        //adapter = new ArrayAdapter<>(viewLocal.getContext(), android.R.layout.simple_spinner_item, countryObjects);
+        adapter = ArrayAdapter.createFromResource(viewLocal.getContext(), R.array.data_country_names, R.layout.custom_spinner_items);
 
-        adapter = new ArrayAdapter<>(viewLocal.getContext(), android.R.layout.simple_spinner_item, countryObjects);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         countrySpinner.setAdapter(adapter);
+
+        updateData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                positionOnSpinner = countrySpinner.getSelectedItemPosition();
+                displayCovidData(objectToShow(positionOnSpinner));
+            }
+        });
 
         return viewLocal;
     }
@@ -72,17 +91,7 @@ public class dataFragment extends Fragment {
     public void httpGET(String url)
     {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        parsingData(response);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        }
+                this::parsingData, Throwable::printStackTrace
         );
         QUEUE.add(stringRequest);
     }
@@ -135,10 +144,16 @@ public class dataFragment extends Fragment {
                 countryObjects.add(c1);
             }
             displayCovidData(countryObjects.get(0));
+            System.out.println(countryObjects);
         }
         catch (JSONException e){
                 Log.e("Parsing Error...",url);
         }
+    }
+
+    public CovidData objectToShow(int index)
+    {
+        return countryObjects.get(index);
     }
 
     public void displayCovidData(CovidData data){

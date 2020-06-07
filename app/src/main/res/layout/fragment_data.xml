@@ -3,33 +3,56 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/covid_background"
+    android:background="@drawable/data_background"
     android:orientation="vertical">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:src="@drawable/data_corona_top"/>
+        android:layout_height="50dp"
+        android:layout_marginTop="222dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <Spinner
             android:id="@+id/data_spinner"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
             android:dropDownWidth="250dp"
             android:spinnerMode="dropdown"
-            android:background="@drawable/spinner_bg"
+            android:background="@drawable/spinner_background"
             android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/data_button"
+            android:text="GET"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_marginStart="10dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_shape"
+            android:shadowColor="#A8A825"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/data_country_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="100dp"
+        android:maxHeight="100dp"
         android:layout_gravity="center"
+        android:fontFamily="@font/arbutus_slab"
+        android:gravity="center"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="42sp"/>
+        android:textSize="38sp"/>
 
     <TextView
         android:layout_width="wrap_content"

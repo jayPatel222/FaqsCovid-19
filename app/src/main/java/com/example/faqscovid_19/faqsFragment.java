@@ -38,23 +38,6 @@ public class faqsFragment extends Fragment {
 
         viewLocal = inflater.inflate(R.layout.fragment_faq, container, false);
 
-        topics = Objects.requireNonNull(getActivity()).getResources().getStringArray(R.array.faq_topics);
-        questions_topic_1 = Objects.requireNonNull(getActivity()).getResources().getStringArray(R.array.faq_questions_topic_1);
-        questions_topic_2 = Objects.requireNonNull(getActivity()).getResources().getStringArray(R.array.fq_questions_topic_2);
-        answers_topic_1 = Objects.requireNonNull(getActivity()).getResources().getStringArray(R.array.faq_answers_topic_1);
-        answers_topic_2 = Objects.requireNonNull(getActivity()).getResources().getStringArray(R.array.faq_answers_topic_2);
-
-        questions.add(questions_topic_1);
-        questions.add(questions_topic_2);
-        answers_1.put(questions_topic_1[0], answers_topic_1[0]);
-        answers_1.put(questions_topic_1[1], answers_topic_1[1]);
-        answers_2.put(questions_topic_2[0], answers_topic_2[0]);
-        answers_2.put(questions_topic_2[1], answers_topic_2[1]);
-        answers_2.put(questions_topic_2[2], answers_topic_2[2]);
-
-        data.add(answers_1);
-        data.add(answers_2);
-
         myExpandable = viewLocal.findViewById(R.id.faq_expandable_textView);
         adapter = new ExpandableTextViewAdapter(getContext());
         myExpandable.setAdapter(adapter);
