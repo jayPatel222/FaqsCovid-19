@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FAQs Here"
-        android:textSize="30dp"
-        android:layout_centerInParent="true"></TextView>
+    android:background="#000000"
+    android:scrollbars="vertical"
+    android:orientation="vertical">
 
-</RelativeLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:orientation="horizontal"
+    android:background="#BBEAC0">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="2"
+        android:textColor="#000F6E"
+        android:textSize="22sp"
+        android:text="FAQ COVID-19"
+        android:gravity="end|center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textColor="#000F6E"
+        android:textSize="14sp"
+        android:text="Source\nWHO &amp; CDC"
+        android:gravity="end"
+        android:textStyle="bold"/>
+
+</LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/faq_expandable_textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="3dp">
+
+    </ExpandableListView>
+
+</LinearLayout>
