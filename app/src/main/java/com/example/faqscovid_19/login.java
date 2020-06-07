@@ -1,6 +1,7 @@
 package com.example.faqscovid_19;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.arch.core.executor.TaskExecutor;
 
 import android.content.Intent;
