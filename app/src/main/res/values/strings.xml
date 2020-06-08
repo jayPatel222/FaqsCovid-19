@@ -17,6 +17,16 @@
     <string name="data_total_recovered">Total Recovered</string>
     <string name="faq_source">Source: WHO &amp; CDC</string>
 
+    <string name="news">News</string>
+    <string name="statistics">Statistics</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="prevention">Prevention</string>
+    <string name="faqs">FAQs</string>
+
+    <string name="account">Account</string>
+    <string name="logout">Log out</string>
+
+
     <string-array name="data_country_names">
         <item>Global Stats</item>
         <item>Afghanistan</item>

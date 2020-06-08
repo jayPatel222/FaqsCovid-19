@@ -51,8 +51,6 @@ public class dataFragment extends Fragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Data");
         super.onCreate(savedInstanceState);
         url = "https://api.smartable.ai/coronavirus/stats/global?Subscription-Key=1a3e9cd5b22c4a9b86885d5ce7a1ce3d";
         countryObjects = new ArrayList<>();
@@ -64,6 +62,9 @@ public class dataFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
+        TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
+        toolbarTitle.setText(R.string.statistics);
 
         viewLocal = inflater.inflate(R.layout.fragment_data, container, false);
 

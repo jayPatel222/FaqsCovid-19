@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -25,6 +26,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class newsFragment extends Fragment{
 
@@ -43,8 +45,9 @@ public class newsFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("News");
+        Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
+        TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
+        toolbarTitle.setText(R.string.news);
 
         viewLocal = inflater.inflate(R.layout.fragment_news, container, false);
 
@@ -54,7 +57,7 @@ public class newsFragment extends Fragment{
 
         recyclerAdapter = new RecyclerAdapter(getContext(), myDataSet);
 
-        QUEUE = Volley.newRequestQueue(getContext());
+        QUEUE = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
         httpGET(url);
 
         return viewLocal;
