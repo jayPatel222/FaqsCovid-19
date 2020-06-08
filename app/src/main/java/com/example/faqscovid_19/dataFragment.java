@@ -54,7 +54,7 @@ public class dataFragment extends Fragment {
         super.onCreate(savedInstanceState);
         url = "https://api.smartable.ai/coronavirus/stats/global?Subscription-Key=1a3e9cd5b22c4a9b86885d5ce7a1ce3d";
         countryObjects = new ArrayList<>();
-        Log.e("BEFORE!", "BEFORE!");
+        Log.e("CountryObjects", "They are not being called before OnCreateView!");
         QUEUE = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
         httpGET(url);
     }
@@ -64,6 +64,7 @@ public class dataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
+        getActivity().setTitle(null);
         toolbarTitle.setText(R.string.statistics);
 
         viewLocal = inflater.inflate(R.layout.fragment_data, container, false);
@@ -148,7 +149,7 @@ public class dataFragment extends Fragment {
                 countryObjects.add(c1);
             }
             displayCovidData(countryObjects.get(0));
-            System.out.println(countryObjects);
+            Log.e("Why?","CountryObjects is populated here!");
         }
         catch (JSONException e){
                 Log.e("Parsing Error...",url);

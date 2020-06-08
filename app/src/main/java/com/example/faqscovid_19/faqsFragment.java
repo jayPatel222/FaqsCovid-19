@@ -40,6 +40,7 @@ public class faqsFragment extends Fragment {
 
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
+        getActivity().setTitle(null);
         toolbarTitle.setText(R.string.faqs);
 
         viewLocal = inflater.inflate(R.layout.fragment_faq, container, false);

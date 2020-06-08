@@ -22,6 +22,7 @@ public class preventionFragment extends Fragment {
 
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
+        getActivity().setTitle(null);
         toolbarTitle.setText(R.string.prevention);
 
         viewLocal = inflater.inflate(R.layout.fragment_preventions, container, false);

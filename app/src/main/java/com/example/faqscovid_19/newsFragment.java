@@ -47,6 +47,7 @@ public class newsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Toolbar toolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView toolbarTitle = toolbar.findViewById(R.id.toolbar_title);
+        getActivity().setTitle(null);
         toolbarTitle.setText(R.string.news);
 
         viewLocal = inflater.inflate(R.layout.fragment_news, container, false);
