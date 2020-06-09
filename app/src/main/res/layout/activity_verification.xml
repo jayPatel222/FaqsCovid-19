@@ -1,50 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verification"
+    tools:context=".login"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
 
-    >
-
-    <EditText
-        android:id="@+id/otpVerify"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="OTP"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        android:orientation="vertical"
+        android:padding="50dp"
+        android:background="@color/colorPrimary">
 
-    <Button
-        android:id="@+id/verifyOtp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Verify"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726"></Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:text="Verify your number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="Enter the OTP you just recevied on your phone"/>
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="213dp"
-        android:layout_height="214dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127"
-        app:srcCompat="@drawable/otpicon" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/otpVerify"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="OTP"
+            app:hintTextColor="@color/colorPrimary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:id="@+id/phoneNumber"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_shape"
+            android:bottomRightRadius="30dp"
+            android:bottomLeftRadius="30dp"
+            android:topLeftRadius="30dp"
+            android:topRightRadius="30dp"
+            android:id="@+id/verifyOtp"/>
+
+    </LinearLayout>
+</LinearLayout>
