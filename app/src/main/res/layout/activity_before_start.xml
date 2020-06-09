@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#F6ABAB">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_dark"
+        android:text="Where are you running this app?"
+        android:textSize="36sp"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button_shape"
+        android:text="emulator"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:onClick="RunningEmulator"
+        android:textColor="@android:color/white"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button_shape"
+        android:text="cellphone"
+        android:onClick="RunningCellphone"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

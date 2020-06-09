@@ -79,7 +79,6 @@ public class dataFragment extends Fragment {
 
         //adapter = new ArrayAdapter<>(viewLocal.getContext(), android.R.layout.simple_spinner_item, countryObjects);
         adapter = ArrayAdapter.createFromResource(viewLocal.getContext(), R.array.data_country_names, R.layout.custom_spinner_items);
-
         countrySpinner.setAdapter(adapter);
 
         updateData.setOnClickListener(new View.OnClickListener() {

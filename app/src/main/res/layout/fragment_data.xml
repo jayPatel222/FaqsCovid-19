@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="222dp"
         android:orientation="horizontal"
         android:gravity="center">
@@ -16,7 +16,7 @@
         <Spinner
             android:id="@+id/data_spinner"
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:gravity="center"
