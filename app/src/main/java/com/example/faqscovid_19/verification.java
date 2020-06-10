@@ -37,7 +37,7 @@ EditText code;
         Intent intent = getIntent();
         String coder = intent.getStringExtra("code");
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(coder,code.getText().toString());
-        Toast.makeText(getApplicationContext(),credential+ "",Toast.LENGTH_LONG).show();
+
         signInWithPhoneAuthCredential(credential);
     }
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -46,7 +46,7 @@ EditText code;
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
+
                             Intent intent = new Intent(getBaseContext(), MainActivity.class);
                             startActivity(intent);
                         } else {
