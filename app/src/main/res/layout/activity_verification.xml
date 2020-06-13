@@ -46,6 +46,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:gravity="center"
+                android:maxLength="6"
                 android:id="@+id/otpVerify"
                 android:layout_height="wrap_content"
                 />

@@ -47,6 +47,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:id="@+id/phoneNumber"
+                android:maxLength="10"
                 android:layout_height="wrap_content"
                 />
 
