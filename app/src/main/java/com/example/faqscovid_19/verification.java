@@ -34,6 +34,18 @@ EditText code;
 
     private void verifySignInCode(){
         code = findViewById(R.id.otpVerify);
+        String codeOtp = code.getText().toString();
+        if (codeOtp.isEmpty()){
+            code.setError("Required");
+            code.requestFocus();
+            return;
+        }
+        if (codeOtp.length() < 6){
+            code.setError("Not a valid OTP");
+            code.requestFocus();
+            return;
+        }
+
         Intent intent = getIntent();
         String coder = intent.getStringExtra("code");
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(coder,code.getText().toString());
@@ -50,7 +62,9 @@ EditText code;
                             Intent intent = new Intent(getBaseContext(), MainActivity.class);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(getApplicationContext(),"failed",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Failed try again !!",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getBaseContext(), login.class);
+                            startActivity(intent);
                         }
                     }
                 });
